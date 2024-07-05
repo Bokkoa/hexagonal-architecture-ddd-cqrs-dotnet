@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Modules\BankAccounts\CommandHandlers\" />
+    <Folder Include="Modules\BankAccounts\QueryHandlers\" />
+    <Folder Include="Modules\Budgets\CommandHandlers\" />
+    <Folder Include="Modules\Budgets\QueryHandlers\" />
+    <Folder Include="Ports\" />
+  </ItemGroup>
+
 </Project>

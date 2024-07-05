@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Databases\Configurations\" />
+    <Folder Include="Databases\Contexts\" />
+    <Folder Include="Databases\Converters\" />
+  </ItemGroup>
+
 </Project>
