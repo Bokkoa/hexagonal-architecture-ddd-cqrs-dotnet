@@ -1,6 +1,4 @@
-﻿
-
-namespace Application.Abstractions.Contracts;
+﻿namespace Application.Abstractions.Contracts;
 
 public interface ICommand
 {

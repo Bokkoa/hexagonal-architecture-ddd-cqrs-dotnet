@@ -2,5 +2,5 @@
 
 public abstract class Message : ICommand
 {
-    public DateTimeOffset TimeStamp { get; private set; } = DateTimeOffset.UtcNow;
+    public DateTimeOffset TimeStamp { get; private set; } = DateTimeOffset.Now;
 }
