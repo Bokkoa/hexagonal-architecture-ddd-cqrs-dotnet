@@ -1,6 +1,6 @@
 ﻿namespace Application.Abstractions.Contracts;
 
-public abstract class Message : ICommand
+public abstract record Message : ICommand
 {
     public DateTimeOffset TimeStamp { get; private set; } = DateTimeOffset.Now;
 }

@@ -13,6 +13,7 @@ public class Account : AggregateRoot
     public IEnumerable<Transaction> Transactions => _transactions.AsReadOnly();
 
     public void Create(string firstName, string lastName, string email) {
+        Id = Guid.NewGuid();
         Profile = new(firstName, lastName, email);
     }
 

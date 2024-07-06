@@ -9,6 +9,11 @@ public interface IFinanceManagementRepository
             where TEntity: class;
     Task<TEntity?> GetAsync<TEntity>(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken)
             where TEntity: class;
+    Task DeleteAsync<TEntity>(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken)
+    where TEntity : class;
+    Task UpdateAsync<TEntity, TProperty>(Expression<Func<TEntity, bool>> expression, TProperty property, CancellationToken cancellationToken)
+         where TEntity : class;
+
     Task<List<TEntity>> ListAsync<TEntity>(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken)
         where TEntity : class;
 }

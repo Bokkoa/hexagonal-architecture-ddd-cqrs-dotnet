@@ -26,6 +26,24 @@ public class FinanceManagementRepository : IFinanceManagementRepository
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task UpdateAsync<TEntity, TProperty>(Expression<Func<TEntity, bool>> expression, TProperty property, CancellationToken cancellationToken)
+         where TEntity : class
+    {
+        var entity = await _dbContext.Set<TEntity>().FirstAsync(expression, cancellationToken);
+        _dbContext.Attach(entity);
+        _dbContext.Entry(entity).Property(nameof(TProperty)).CurrentValue = property;
+
+        await _dbContext.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task DeleteAsync<TEntity>(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken)
+        where TEntity : class
+    {
+        var entity = await _dbContext.Set<TEntity>().FirstAsync(expression, cancellationToken);
+        _dbContext.Set<TEntity>().Remove(entity);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+    }
+
     public async Task<TEntity?> GetAsync<TEntity>(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken) where TEntity : class
     {
         return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(expression, cancellationToken);
