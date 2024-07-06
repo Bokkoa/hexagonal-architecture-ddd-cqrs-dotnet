@@ -6,13 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Modules\BankAccounts\Aggregates\" />
-    <Folder Include="Modules\BankAccounts\Entities\" />
-    <Folder Include="Modules\BankAccounts\ValueObjects\" />
-    <Folder Include="Modules\Budgets\Aggregates\" />
-    <Folder Include="Modules\Budgets\Entities\" />
-    <Folder Include="Modules\Budgets\ValueObjects\" />
-  </ItemGroup>
-
 </Project>
