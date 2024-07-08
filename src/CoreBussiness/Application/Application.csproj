@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Modules\Accounts\QueryHandlers\" />
-    <Folder Include="Modules\Budgets\CommandHandlers\" />
-    <Folder Include="Modules\Budgets\QueryHandlers\" />
   </ItemGroup>
 
   <ItemGroup>
