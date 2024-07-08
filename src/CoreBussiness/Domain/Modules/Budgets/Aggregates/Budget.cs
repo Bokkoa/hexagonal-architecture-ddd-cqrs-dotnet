@@ -4,8 +4,7 @@ using Domain.Modules.Budgets.ValueObjects.Categories;
 namespace Domain.Modules.Budgets.Aggregates;
 public class Budget : AggregateRoot
 {
-    private readonly List<Category> _categories = new();
-
+    public readonly List<Category> _categories = new();
 
     public Guid OwnerId { get; private set; }
     public DateOnly ReferencePeriod { get; private set; }
@@ -14,7 +13,7 @@ public class Budget : AggregateRoot
     public Category Category { get; private set; }
 
     public IEnumerable<Category> Categories
-        => _categories.AsReadOnly();
+        => _categories;
 
     public void Register(Guid ownerId, DateOnly referencePeriod, decimal totalValue)
     {

@@ -3,6 +3,7 @@
 namespace Domain.Modules.Budgets.ValueObjects.Categories;
 public record Category(string Name, decimal Limit)
 {
+    public int Id { get; set; }
     List<Transaction> _transactions = new();
 
     public IEnumerable<Transaction> Transactions
