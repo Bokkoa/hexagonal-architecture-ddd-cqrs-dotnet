@@ -32,4 +32,11 @@ public class Budget : AggregateRoot
     {
         TotalValue = totalValue;
     }
+
+    public void RegisterTransaction(string category, DateTime createAt, string description, decimal value)
+    {
+        _categories
+            .Single(c => c.Name.Equals(category, StringComparison.OrdinalIgnoreCase))
+            .RegisterTransaction(createAt, description, value);
+    }
 }

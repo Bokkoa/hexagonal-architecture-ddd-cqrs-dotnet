@@ -1,11 +1,12 @@
 ﻿
+using Application.Contracts;
 using Application.Contracts.ViewModels;
 using Domain.Modules.Accounts.Aggregates;
 using Domain.Modules.Accounts.Entities.Profile;
 using Domain.Modules.Accounts.ValueObjects.Address;
-using Domain.Modules.Accounts.ValueObjects.Transactions;
 using Domain.Modules.Budgets.Aggregates;
 using Domain.Modules.Budgets.ValueObjects.Categories;
+using Domain.Modules.Budgets.ValueObjects.Transactions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.SqlServer.Databases.Contexts;
@@ -36,9 +37,9 @@ public class FinanceManagementContext: DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 
-        modelBuilder.Entity<BalanceViewModel>().HasNoKey().ToView(nameof(BalanceViewModel));
-        modelBuilder.Entity<CategoryViewModel>().HasNoKey().ToView(nameof(CategoryViewModel));
-        modelBuilder.Entity<TransactionViewModel>().HasNoKey().ToView(nameof(TransactionViewModel));
+        modelBuilder.Entity<ViewModel.BalanceViewModel>().HasNoKey().ToView(nameof(BalanceViewModel));
+        modelBuilder.Entity<ViewModel.CategoryViewModel>().HasNoKey().ToView(nameof(CategoryViewModel));
+        modelBuilder.Entity<ViewModel.TransactionViewModel>().HasNoKey().ToView(nameof(TransactionViewModel));
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

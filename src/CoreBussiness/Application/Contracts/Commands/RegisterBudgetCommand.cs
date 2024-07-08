@@ -1,7 +1,7 @@
 ﻿using Application.Abstractions.Contracts;
 
 namespace Application.Contracts.Commands;
-public record CreateAccountCommand(string FirstName, string LastName, string Email) 
+public record RegisterBudgetCommand (Guid AccountId, DateOnly ReferencePeriod, decimal TotalValue)
     : Message, ICommand
 {
 }

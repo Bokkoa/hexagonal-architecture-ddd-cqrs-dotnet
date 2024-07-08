@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\NewFolder\" />
-    <Folder Include="Modules\BankAccounts\CommandHandlers\" />
-    <Folder Include="Modules\BankAccounts\QueryHandlers\" />
+    <Folder Include="Modules\Accounts\QueryHandlers\" />
     <Folder Include="Modules\Budgets\CommandHandlers\" />
     <Folder Include="Modules\Budgets\QueryHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,6 @@
 using Domain.Modules.Accounts.Aggregates;
 using Domain.Modules.Accounts.Entities.Profile;
 using Domain.Modules.Accounts.ValueObjects.Address;
-using Domain.Modules.Accounts.ValueObjects.Transactions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -33,15 +32,6 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
                 }
             );
 
-        builder.OwnsMany(
-            account => account.Transactions,
-            transactionNavigationBuilder =>
-            {
-                transactionNavigationBuilder.ToTable(nameof(Transaction));
-
-                transactionNavigationBuilder.Property<int>("Id").IsRequired();
-                transactionNavigationBuilder.HasKey("Id");
-            }
-        );
+        
     }
 }
